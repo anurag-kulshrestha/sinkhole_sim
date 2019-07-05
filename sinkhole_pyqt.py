@@ -119,7 +119,7 @@ def update():
     cv2.putText(img,'Total simulation period: {} days'.format(int(max_depth/rate_of_deformation)),(10,300+4*line_sep), font, 0.5,(255,255,255),1,cv2.LINE_AA)
     cv2.putText(img,'Temporal Resolution: {} days'.format(temporal_resolution),(10,300+5*line_sep), font, 0.5,(255,255,255),1,cv2.LINE_AA)
     cv2.putText(img,'Velocity of center: {} millimeters/day'.format(5),(10,300+6*line_sep), font, 0.5,(255,255,255),1,cv2.LINE_AA)
-    cv2.putText(img,'Day: {}'.format(index%Z.shape[0]*3),(10,300+7*line_sep), font, 0.5,(255,255,255),1,cv2.LINE_AA)
+    cv2.putText(img,'Day: {}'.format(index%Z.shape[0]*temporal_resolution),(10,300+7*line_sep), font, 0.5,(255,255,255),1,cv2.LINE_AA)
     cv2.imwrite(img_name,img)
 timer = QtCore.QTimer()
 timer.timeout.connect(update)
